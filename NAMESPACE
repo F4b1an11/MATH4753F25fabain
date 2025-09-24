@@ -3,6 +3,7 @@
 export(getmode)
 export(myfirstfunction)
 export(mysum)
+export(pareto)
 export(scatterhist)
 importFrom(graphics,barplot)
 importFrom(graphics,hist)
