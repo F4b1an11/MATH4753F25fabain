@@ -1,7 +1,7 @@
 #' paretoGraph
 #'
 #' @param x is a vector
-#' @param mn
+#' @param mn the main title of the plot
 #' @param ...
 #'
 #' @returns creates a pareto Graph

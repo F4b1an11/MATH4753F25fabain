@@ -9,6 +9,8 @@ pareto(x, mn = "Pareto barplot", ...)
 \arguments{
 \item{x}{is a vector}
 
+\item{mn}{the main title of the plot}
+
 \item{...}{}
 }
 \value{
