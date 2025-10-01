@@ -2,6 +2,7 @@
 
 export(birthday)
 export(getmode)
+export(mybin)
 export(myfirstfunction)
 export(mysum)
 export(pareto)
