@@ -1,0 +1,86 @@
+---
+title: "Birthday"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Birthday}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, echo=FALSE}
+library(MATH4753F25fabian)
+```
+
+This is an introduction the "Birthday problem" 
+
+# The mathematical derivation
+
+The mathematical  derivation of the probability that two or more people in a class of size n have the same birthday.
+
+It is easier to compute the complement: the probability that all birthdays thar are distinct.
+\begin{multline}
+  365 \times 364 \times 363 \times .... (365 - n + 1) = \frac{365!}{(365-n)!}
+\end{multline}
+
+meaning the probability that all birthdays are distinct:
+
+
+\begin{multline}
+P(distinct) = \frac{365 \times 364 \times 363 \times .... (365 - n + 1)}{365^n} = \frac{365!}{(365-n)!365^n}
+\end{multline}
+
+Finally, probability that at least two share a birthday:
+
+\begin{multline}
+P(match) = 1 - P(distinct) = 1 - \frac{365!}{(365-n)!365^n}
+\end{multline}
+
+
+#  Reformulation Using lfactorial and lchoose
+
+$log(\frac{365!}{(365-n)!365^n}) = lfactorial(365) - lfactorial(365-n) - n \times log(365)$
+
+
+```{r}
+n = 20
+log_p <- lfactorial(365) - lfactorial(365 - n) - n * log(365)
+p_distinct <- exp(log_p)
+p_match <- 1 - p_distinct
+p_match
+```
+
+```{r,echo=FALSE}
+
+```
+
+# function
+```{r}
+birthday <- function(n) {
+  sapply(n, function(k) {
+    if (k > 365) return(1)  # pigeonhole principle
+    log_p <- lfactorial(365) - lfactorial(365 - k) - k * log(365)
+    p_distinct <- exp(log_p)
+    1 - p_distinct
+  })
+}
+```
+
+
+```{r}
+birthday(n = 20:25)
+```
+
+
+
+
+
+
+
+
