@@ -2,6 +2,7 @@
 
 export(birthday)
 export(getmode)
+export(myTsim)
 export(mybin)
 export(mychisim)
 export(myfirstfunction)
