@@ -9,7 +9,7 @@ myTsim(
   sigma1 = 3,
   mean1 = 5,
   iter = 1000,
-  ymax = 0.1,
+  ymax = 0.5,
   legend_pos = "topright",
   ...
 )

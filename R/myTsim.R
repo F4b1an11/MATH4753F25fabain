@@ -19,7 +19,7 @@
 #'
 #' @examples
 #' myTsim(iter=10000,ymax=0.45)
-myTsim<-function(n1=10,sigma1=3,mean1=5,iter=1000,ymax=0.1,legend_pos = "topright",...){    # adjust ymax to make graph fit
+myTsim<-function(n1=10,sigma1=3,mean1=5,iter=1000,ymax=0.5,legend_pos = "topright",...){    # adjust ymax to make graph fit
   y1=rnorm(n1*iter,mean=mean1,sd=sigma1)# generate iter samples of size n1
 
   data1.mat=matrix(y1,nrow=n1,ncol=iter,byrow=TRUE) # Each column is a sample size n1
