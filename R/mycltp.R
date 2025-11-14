@@ -1,11 +1,11 @@
-#' Title
+#' mycltp
 #'
 #' @param n number of test
 #' @param iter number of iterations
 #' @param lambda lambda = mean
 #' @param ... extra
 #'
-#' @returns
+#' @returns returns 3 graphs: hist, box, and curve
 #' @export
 #'
 #' @examples
